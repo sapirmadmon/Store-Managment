@@ -1,0 +1,31 @@
+.wrapperEdit {
+  margin-left: 10px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+
+.topEdit {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftCenter {
+  flex: 3;
+}
+
+.rightCenter {
+  flex: 5;
+}
+
+#selectedProduct {
+  width: 120px;
+}

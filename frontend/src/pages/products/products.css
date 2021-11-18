@@ -1,0 +1,36 @@
+.products {
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wrapperProducts {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.leftProductList {
+  flex: 4;
+}
+
+.right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightUp {
+  flex: 7;
+}
+
+.rightDown {
+  flex: 3;
+}

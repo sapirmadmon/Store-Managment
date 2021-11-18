@@ -1,0 +1,18 @@
+.wrapperCustomers {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+
+.left {
+  flex: 6;
+}
+
+.right {
+  flex: 4;
+  align-items: center;
+}
+
+.wrapperCustomerPage {
+  margin-left: 10px;
+}

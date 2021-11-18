@@ -1,0 +1,24 @@
+.wrapperEditCustomer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftEditCustomerPage {
+  flex: 5;
+}
+
+.rightEditCustomerPage {
+  flex: 5;
+}

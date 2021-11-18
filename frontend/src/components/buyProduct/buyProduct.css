@@ -1,0 +1,22 @@
+.buyProdWrapper {
+  /* display: flex;
+    flex-direction: row; */
+}
+
+#selectedProduct {
+  margin-right: 5px;
+  height: 21px;
+  width: 25%;
+}
+
+#btnBuy {
+  height: 21px;
+  width: 15%;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffd620;
+  color: black;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
