@@ -1,4 +1,4 @@
-function CustomerComp({ store, customer }) {
+function CustomerComp({ customer }) {
   return (
     <div id="wrapperCustomer">
       <table>

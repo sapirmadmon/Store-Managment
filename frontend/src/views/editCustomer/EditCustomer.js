@@ -9,9 +9,8 @@ function EditCustomer({ store }) {
     <div>
       <Menu />
       <div className="wrapperEditCustomer">
-        {/* <div className="top"> */}
         <h1>Edit Customer Page</h1>
-        {/* </div> */}
+
         <div className="center">
           <div className="leftEditCustomerPage">
             <EditCustomerComp store={store} />

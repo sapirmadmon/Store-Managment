@@ -1,12 +1,12 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Products from "./pages/products/Products";
+import Products from "./views/products/Products";
 import ManageStore from "./ManageStore";
-import EditProduct from "./pages/editProduct/EditProduct";
-import EditCustomer from "./pages/editCustomer/EditCustomer";
-import Customers from "./pages/customers/Customers";
-import Purchased from "./pages/purchased/Purchased";
-import LoginPage from "./pages/login/LoginPage";
+import EditProduct from "./views/editProduct/EditProduct";
+import EditCustomer from "./views/editCustomer/EditCustomer";
+import Customers from "./views/customers/Customers";
+import Purchased from "./views/purchased/Purchased";
+import LoginPage from "./views/login/LoginPage";
 
 const App = () => {
   const manageStore = new ManageStore();

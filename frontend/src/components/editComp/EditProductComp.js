@@ -1,46 +1,95 @@
-import './editComp.css';
-import { observer } from 'mobx-react-lite';
+import "./editComp.css";
+import { observer } from "mobx-react-lite";
 
-function EditProductComp({store}) {
+function EditProductComp({
+  curEditProduct,
+  loadCurEditProduct,
+  customersByProd,
+  updateProduct,
+  deleteProduct,
+}) {
+  const onUpdateProduct = async () => {
+    updateProduct(curEditProduct);
+  };
 
-    const updateProduct = async () => {
-        store.updateProduct(store.curEditProduct);
-    }
+  const onDeleteProduct = async () => {
+    deleteProduct(curEditProduct);
+    curEditProduct = { name: "", price: "", quantity: "" };
+    customersByProd = [];
+    alert("The product has been deleted");
+  };
 
-    const deleteProduct = async () => {
-        store.deleteProduct(store.curEditProduct);
-        store.curEditProduct = {name: "", price: "", quantity: ""};
-        store.customersByProd = [];
-        alert("The product has been deleted");
-    }
-
-    return (
-        <div className="wrapperEditProd">
-            <div className="inputs">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td><strong>Name</strong></td>
-                        <td><input type="text" value={store.curEditProduct.name} onChange={(e) => store.loadCurEditProduct({...store.curEditProduct, name: e.target.value})} /></td>
-                    </tr>
-                    <tr>
-                        <td> <strong>Price</strong></td>
-                        <td><input type="text" value={store.curEditProduct.price} onChange={(e) => store.loadCurEditProduct({...store.curEditProduct, price: e.target.value})}/></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Quantity</strong></td>
-                        <td><input type="text" value={store.curEditProduct?.quantity}  onChange={(e) => store.loadCurEditProduct({...store.curEditProduct, quantity: e.target.value})}/></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <br/>
-            <div className="btns">
-                <button className="btn" onClick={updateProduct}>Update</button>
-                <button className="btn" onClick={deleteProduct}>Delete</button>
-            </div>
-        </div>
-    )
+  return (
+    <div className="wrapperEditProd">
+      <div className="inputs">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Name</strong>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={curEditProduct.name}
+                  onChange={(e) =>
+                    loadCurEditProduct({
+                      ...curEditProduct,
+                      name: e.target.value,
+                    })
+                  }
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {" "}
+                <strong>Price</strong>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={curEditProduct.price}
+                  onChange={(e) =>
+                    loadCurEditProduct({
+                      ...curEditProduct,
+                      price: e.target.value,
+                    })
+                  }
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Quantity</strong>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  value={curEditProduct?.quantity}
+                  onChange={(e) =>
+                    loadCurEditProduct({
+                      ...curEditProduct,
+                      quantity: e.target.value,
+                    })
+                  }
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div className="btns">
+        <button className="btn" onClick={onUpdateProduct}>
+          Update
+        </button>
+        <button className="btn" onClick={onDeleteProduct}>
+          Delete
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default observer(EditProductComp)
+export default observer(EditProductComp);

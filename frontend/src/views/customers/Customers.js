@@ -1,21 +1,10 @@
 import "./customers.css";
-import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import CustomersTable from "../../components/customersTable/CustomersTable";
 import Menu from "../../components/menu/Menu";
 import PurchaseProduct from "../../components/purchaseProduct/PurchaseProduct";
 
 function Customers({ store }) {
-  useEffect(() => {
-    const fetchCustomers = async () => {
-      //   const res = await axios.get(`http://localhost:3000/customers`);
-      //   store.loadCustomers(res.data);
-
-      store.curCustomer = {};
-    };
-    fetchCustomers();
-  }, []);
-
   return (
     <>
       <Menu />

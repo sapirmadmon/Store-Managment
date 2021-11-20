@@ -4,32 +4,30 @@ import { useEffect } from "react";
 import axios from "axios";
 import CustomerComp from "../customer/CustomerComp";
 
-function CustomersByProd({ store }) {
+function CustomersByProd({
+  curEditProduct,
+  loadCustomersByProd,
+  customersByProd,
+}) {
   useEffect(() => {
     const fetchCustomers = async () => {
-      if (store.curEditProduct.id !== undefined) {
+      if (curEditProduct.id !== undefined) {
         const res = await axios.get(
-          `http://localhost:3000/purchases/${store.curEditProduct.id}`
+          `http://localhost:3000/purchases/${curEditProduct.id}`
         );
-        store.loadCustomersByProd(res.data);
+        loadCustomersByProd(res.data);
       }
     };
     fetchCustomers();
-  }, [store.curEditProduct]);
+  }, [curEditProduct]);
 
   return (
     <div className="wrapperAllCusts">
-      <h3>{store.curEditProduct.name} customer's</h3>
+      <h3>{curEditProduct.name} customer's</h3>
       <div className="allCustomers">
-        {store.customersByProd.length > 0 &&
-          store.customersByProd.map((customer) => {
-            return (
-              <CustomerComp
-                key={customer.id}
-                customer={customer}
-                store={store}
-              />
-            );
+        {customersByProd.length > 0 &&
+          customersByProd.map((customer) => {
+            return <CustomerComp key={customer.id} customer={customer} />;
           })}
       </div>
     </div>
